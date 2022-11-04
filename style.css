@@ -6,17 +6,48 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
+    color: rgb(21, 54, 121);
 }
 
 body {
-    background-color: rgb(232, 158, 255);
+    background: linear-gradient(180deg, rgba(171, 90, 195, 0.75) 1%, rgba(232,158,255,1) 100%);
+    background-attachment: fixed;
 }
 
-.container {
+main {
+    position: relative;
+}
+
+.post_error {
+    margin-top: 25%;
+    text-align: center;
+}
+
+#bmo {
+    position: fixed;
+    width: 100px;
+    top: 80%;
+    left: 75%;
+}
+
+@media (max-width: 530px)
+{
+    .title, .user_name {
+        display: none;
+    }
+
+    .post_error {
+        font-size: 15pt;
+    }
+}
+
+.header_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px;
-    border-bottom: 1px solid rgba(187, 253, 255, 0.445);
+    background-color: rgba(212, 252, 249, 0.65);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .logo_area {
@@ -28,7 +59,10 @@ body {
 
 .title {
     font-size: 18pt;
+    text-decoration: none;
+    font-weight: 400;
 }
+
 
 .logo_area a img {
     width: 100px;
@@ -41,10 +75,149 @@ body {
 }
 
 .user_pic {
-    border-radius: 50%;
+    width: 50px;
     background-color: #eee;
+    border-radius: 50%;
+    transition: all 0.35s;
 }
 
 .user_name {
     text-align: center;
+}
+
+.container {
+    max-width: 50vw;
+    margin: 50px auto;
+    border: 1px solid #1EB8CD;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #1EB8CD;
+    padding: 10px 0;
+    background-color: #1EB8CD;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 20px 10px;
+}
+
+.name_username {
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+}
+
+.post_sec_username {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.pic_acc {
+    width: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: all 0.35s;
+}
+
+.pic_acc:hover, .user_link:hover, .pic_acc_comment:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.post {
+    border-top: 1px solid rgb(183, 181, 181);
+    border-bottom: 1px solid rgb(183, 181, 181);
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.post_title {
+    font-size: 17pt;
+    margin-bottom: 5px;
+}
+
+.post_body {
+    font-size: 12pt;
+    text-align: justify;
+}
+
+.post_footer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.tags {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.likes_svg {
+    height: 40px;
+    width: 40px;
+    transition: all 0.35s;
+}
+
+.likes_svg_white {
+    height: 40px;
+    width: 40px;
+    fill: white;
+    stroke: black;
+    stroke-width: 20;
+    transition: all 0.35s;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+}
+
+.likes_svg:hover {
+    cursor: pointer;
+}
+
+.likes_svg:active, .likes_svg_white:active {
+    transform: scale(0.9) rotate(-25deg);
+}
+
+.comment {
+    margin: 0 7px;
+    border-top: 1px solid rgba(0, 0, 0, 0.377);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    border-radius: 7px;    
+    padding: 5px;
+}
+
+.divisor {
+    margin: 0 0 10px 0;
+    border: 0.5px solid rgba(106, 105, 105, 0.52);
+}
+
+.pic_acc_comment {
+    width: 35px;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: all 0.35s;
+}
+
+.sec_username_comment {
+    color: rgb(0, 0, 0);
+}
+
+.comment_header {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.comment_body {
+    color: rgba(0, 0, 0, 0.782);
+    font-size: 11pt;
+    text-align: justify;
+    margin: 10px 10px 0 40px;
 }
